@@ -1,1000 +1,3002 @@
+<text>
+<sentence>
 Show All
+</sentence>
+<sentence>
 About ANSI SQL query mode
+</sentence>
+<sentence>
 Some of the content in this topic may not be applicable to some languages.
+</sentence>
+<sentence>
 You can create SQL queries in one of two ANSI SQL query modes:
+</sentence>
+<sentence>
 ANSI-89 describes the traditional Jet SQL syntax.
+</sentence>
+<sentence>
 This mode conforms closely to the ANSI-89 Level 1 specification, but is not ANSI-89 Level 1 compliant.
+</sentence>
+<sentence>
 Certain ANSI-89 SQL features are not implemented and the wildcard characters conform to the Visual Basic for Applications (VBA) specification, not SQL.
+</sentence>
+<sentence>
 ANSI-92 provides new reserved words, syntax rules, and wildcard characters that enhance your ability to create queries, filters, and SQL statements.
+</sentence>
+<sentence>
 This mode conforms closely to the ANSI-92 Level 1 specification, but is not ANSI-92 Level 1 compliant.
+</sentence>
+<sentence>
 This query mode has more of the ANSI syntax, and the wildcard characters conform to the SQL specification.
+</sentence>
+<sentence>
 In Microsoft Access 2000 using ADOX, you could programmatically create queries that used ANSI-92 SQL syntax.
+</sentence>
+<sentence>
 However, any queries you created were not visible in the Database window because there was no option to set this mode in the user interface.
+</sentence>
+<sentence>
 Now in Access 2002, you can set the ANSI SQL query mode through the user interface for the current database and as the default setting for new databases.
+</sentence>
+<sentence>
 Why use ANSI-92 SQL?
+</sentence>
+<sentence>
 You may want to use ANSI-92 SQL for the following reasons:
+</sentence>
+<sentence>
 You anticipate upsizing your application in the future to an Access project and want to create queries that will run with minimal changes in a Microsoft SQL Server database.
+</sentence>
+<sentence>
 You want to take advantage of the new features not found in ANSI-89 SQL, such as:
+</sentence>
+<sentence>
 Changing security settings by using the GRANT and REVOKE SQL statements
+</sentence>
+<sentence>
 Using DISTINCT in an aggregate function reference, for example, SUM-DISTINCT-Price
+</sentence>
+<sentence>
 Using the LIMIT TO nn ROWS clause to limit the number of rows returned by a query
+</sentence>
+<sentence>
 Why you should avoid mixing queries created under different ANSI SQL query modes
+</sentence>
+<sentence>
 The ANSI SQL query mode default for new Access databases in 2002 and 2000 file formats
+</sentence>
+<sentence>
 ANSI-89 is the default setting for a new Access database in 2002 and 2000 file format.
+</sentence>
+<sentence>
 You can not set the SQL query mode new database default to ANSI-92 in 2000 file format because the option is disabled;
+</sentence>
+<sentence>
 ANSI-89 is the only query mode setting available for a database in Access 2000 file format.
+</sentence>
+<sentence>
 About using connection files
+</sentence>
+<sentence>
 A connection file stores information about a connection to a data source (such as an OLE DB data source) and the data associated with the connection.
+</sentence>
+<sentence>
 In Microsoft Access, you can use a connection file to bind one or more data access pages to a data source.
+</sentence>
+<sentence>
 When you open a page, Access reads the connection file that is linked to the page, and based on the contents of the connection file, connects the page to the appropriate data source.
+</sentence>
+<sentence>
 A connection file uses one of the following file formats:
+</sentence>
+<sentence>
 Office Data Connection (.odc)
+</sentence>
+<sentence>
 A file format that uses HTML and XML to store the connection information.
+</sentence>
+<sentence>
 You can view or edit the contents of the file in any text editor.
+</sentence>
+<sentence>
 Universal Data Link (.udl)
+</sentence>
+<sentence>
 A standard file format provided by Microsoft Data Links to create file-persistent OLE DB data source object definitions.
+</sentence>
+<sentence>
 Benefits of using a connection file
+</sentence>
+<sentence>
 Using a connection file simplifies the task of deploying related data access pages.
+</sentence>
+<sentence>
 Pages that connect to a common data source can share a single connection file.
+</sentence>
+<sentence>
 If you move or copy the data source, instead of updating the ConnectionString property of each dependent page, you only need to edit the connection information in the connection file to make the pages point to the right location or database.
+</sentence>
+<sentence>
 Linking a page to a connection file
+</sentence>
+<sentence>
 When creating a data access page, you can choose whether you want to link the page to a connection file or simply use a connection file without creating a link.
+</sentence>
+<sentence>
 You can also choose whether you want to use an existing connection file or create a new one.
+</sentence>
+<sentence>
 Linking to a connection file
+</sentence>
+<sentence>
 When you establish a link between the connection file and a page, the page's ConnectionFile property is set to the name of the file.
+</sentence>
+<sentence>
 Each time you open the page, Access will read the connection file, extract the connection information, and set the ConnectionString property of the page.
+</sentence>
+<sentence>
 Using a connection file without creating a link
+</sentence>
+<sentence>
 When creating a page, you can use the contents of a connection file to set the ConnectionString property of the page, but choose not to create a link between the page and the connection file.
+</sentence>
+<sentence>
 Changing the connection information of a page
+</sentence>
+<sentence>
 When a connection file is used
+</sentence>
+<sentence>
 Either change the ConnectionFile property of the page to point to a different connection file, or edit the connection file in a text editor.
+</sentence>
+<sentence>
 If you choose to edit the connection file, remember that all other pages that use the connection file will also be affected by the changes you make.
+</sentence>
+<sentence>
 If you edit the ConnectionString property of a page that is linked to a connection file, the link will be broken and the ConnectionFile property will be set to null.
+</sentence>
+<sentence>
 When a connection file is not used
+</sentence>
+<sentence>
 Either create a link between the page and a connection file by setting the ConnectionFile property, or edit the ConnectionString property.
+</sentence>
+<sentence>
 When you create a link, Access will automatically set the ConnectionString property based on the contents of the connection file.
+</sentence>
+<sentence>
 Convert a previous-version data access page
+</sentence>
+<sentence>
 A page created using Microsoft Access 2000 must be converted before it can be used with Access 2002.
+</sentence>
+<sentence>
 Open the page in Access 2002 Design view.
+</sentence>
+<sentence>
 Access will create a backup copy of the page (pagefilename.bak.htm) at the same location as the original data access page file.
+</sentence>
+<sentence>
 If you want to revert to the Access 2000 version of the page, delete the converted file, rename the backup copy, and then connect the page to the database.
+</sentence>
+<sentence>
 If the data access page includes any Microsoft Office Web Components (a PivotTable list, chart, or spreadsheet), only users with a valid Microsoft Office 2002 license will be able to use those components.
+</sentence>
+<sentence>
 About analyzing data
+</sentence>
+<sentence>
 Microsoft Access provides several techniques to help you analyze data.
+</sentence>
+<sentence>
 Create a crosstab query
+</sentence>
+<sentence>
 You can use a crosstab query to calculate and restructure data for easier analysis.
+</sentence>
+<sentence>
 Crosstab queries calculate a sum, average, count, or other type of total for data that is grouped by two types of information – one down the left side of the datasheet and another across the top.
+</sentence>
+<sentence>
 Comparison of a crosstab and a select query
+</sentence>
+<sentence>
 1 A select query
+</sentence>
+<sentence>
 2 A crosstab query based on the select query
+</sentence>
+<sentence>
 Add a PivotTable list to a data access page
+</sentence>
+<sentence>
 A PivotTable list is an interactive table that you can use to analyze data dynamically from within a Web browser.
+</sentence>
+<sentence>
 At run time, users can change the layout of the PivotTable list.
+</sentence>
+<sentence>
 They can move the fields that are displayed in the row, column, and data area of the PivotTable list, or add or remove fields from the list.
+</sentence>
+<sentence>
 Users can also filter, sort, and group data.
+</sentence>
+<sentence>
 The following illustration shows a PivotTable list on the Orders data access page.
+</sentence>
+<sentence>
 PivotTable list on a data access page
+</sentence>
+<sentence>
 View a datasheet or form in PivotTable view
+</sentence>
+<sentence>
 Access 2002 provides a PivotTable view for datasheets and forms.
+</sentence>
+<sentence>
 In this view, you can build an interactive report using the fields underlying the datasheet or form.
+</sentence>
+<sentence>
 The view uses a Microsoft Office PivotTable Component, so you can do all the things that you can do on a PivotTable list.
+</sentence>
+<sentence>
 You can add fields to the view, move or remove fields, and filter, sort, and group data.
+</sentence>
+<sentence>
 The following illustration shows the Employees table in PivotTable view.
+</sentence>
+<sentence>
 Datasheet in PivotTable view
+</sentence>
+<sentence>
 About customizing the layout of a PivotTable or PivotChart view
+</sentence>
+<sentence>
 Customizing the layout of a PivotTable view
+</sentence>
+<sentence>
 You can control how the data is presented in a PivotTable view by customizing the layout.
+</sentence>
+<sentence>
 A different layout lets you calculate and compare summarized values for different elements in your data, or display summaries for a subset of the data.
+</sentence>
+<sentence>
 Using the drop areas
+</sentence>
+<sentence>
 You change the layout by moving the fields to predefined drop areas within the PivotTable view workspace.
+</sentence>
+<sentence>
 Drop areas in PivotTable view
+</sentence>
+<sentence>
 1 Drop areas
+</sentence>
+<sentence>
 2 Detail area
+</sentence>
+<sentence>
 After you move fields to the drop areas so that the drop area captions are covered up, you can still drag additional fields to the areas.
+</sentence>
+<sentence>
 Moving fields to the row or column areas
+</sentence>
+<sentence>
 When you move a field to the row area, the unique items of data within the field are displayed down the rows of the PivotTable view.
+</sentence>
+<sentence>
 When you move a field to the column area, the unique items of data are displayed across the columns.
+</sentence>
+<sentence>
 Moving fields to the detail area
+</sentence>
+<sentence>
 To view total or detail data from the underlying record source, move fields to the detail area.
+</sentence>
+<sentence>
 Moving fields to the filter area
+</sentence>
+<sentence>
 Filter fields allow you to confine the view to a particular part of the available data.
+</sentence>
+<sentence>
 For example, when you move a Product field to the filter area, you can display data for one product at a time.
+</sentence>
+<sentence>
 Moving row or column fields to a higher or lower level
+</sentence>
+<sentence>
 When a view has multiple row and column fields, the fields that are closest to the detail data are referred to as inner fields.
+</sentence>
+<sentence>
 The other fields are outer fields.
+</sentence>
+<sentence>
 You can switch the inner and outer fields.
+</sentence>
+<sentence>
 Example of inner and outer row fields
+</sentence>
+<sentence>
 2 Outer row field
+</sentence>
+<sentence>
 2 Inner row field
+</sentence>
+<sentence>
 3 Outer field items
+</sentence>
+<sentence>
 4 Items for the inner field are repeated for each item in the outer field.
+</sentence>
+<sentence>
 Adding and removing fields
+</sentence>
+<sentence>
 The layout of a PivotTable view does not have to include all of the fields that are available from the underlying record source.
+</sentence>
+<sentence>
 You can also remove fields that you no longer want to see from the PivotTable view layout.
+</sentence>
+<sentence>
 Customizing the layout of a PivotChart view
+</sentence>
+<sentence>
 You change the layout of a chart by moving the fields to predefined drop areas within the chart workspace.
+</sentence>
+<sentence>
 To do this, drop areas must be shown in the chart.
+</sentence>
+<sentence>
 Drop areas are displayed differently depending on the chart type.
+</sentence>
+<sentence>
 For example, a series drop area is not displayed for a pie chart because pie charts consist of only one series.
+</sentence>
+<sentence>
 Additionally, it is written in a style similar to an XML document using a combination of XML-like tags and HTML to create a template for a specific style of output.
+</sentence>
+<sentence>
 Note that you are not required to link either a CSS file or an XSL style sheet to an XML document in order for Internet Explorer 5 (and later versions) to display the document.
+</sentence>
+<sentence>
 Internet Explorer has a default, built-in style sheet that displays the XML source as a (collapsible|expandable) tree.
+</sentence>
+<sentence>
 You can use style sheets to insure that the XML-based Web pages on your intranet or Website are consistent and present a uniform appearance without having to add HTML to each page.
+</sentence>
+<sentence>
 About Extensible Stylesheet Language Transformation (XSLT)
+</sentence>
+<sentence>
 XSL for Transformation (XSLT) is a specification that is currently under development by the World Wide Web Consortium (W3C), and supported by Access.
+</sentence>
+<sentence>
 XSLT is an XML-based language that allows one XML document to be mapped, or transformed, into another XML document.
+</sentence>
+<sentence>
 This provides a way of transforming an XML document's presentation information from a source format to a target format and back again.
+</sentence>
+<sentence>
 Typically, a developer creates an XSL transformation file that, when applied to an XML document during export, interprets or transforms the XML data into a presentation format that can be recognized by another application, such as Service Advertising Protocol (SAP) or a custom purchase order format.
+</sentence>
+<sentence>
 XSLT has many of the constructs (structures and commands) found in other programming languages which allow the developer to use variables, loops and iterations, and conditional statements.
+</sentence>
+<sentence>
 This gives the developer considerable control over the output of the XML data.
+</sentence>
+<sentence>
 About exporting to XML files
+</sentence>
+<sentence>
 Exporting data and database objects to an XML file is a convenient way to move and store your information in a format that can readily be used across the Web.
+</sentence>
+<sentence>
 In Access, you can export the data, the schema (data structure), or both, to XML files.
+</sentence>
+<sentence>
 Export data to an XML file and, optionally, use an XSLT to transform the data to another format.
+</sentence>
+<sentence>
 Export the data schema using XML Schema standard (XSD).
+</sentence>
+<sentence>
 Export the data behind forms and reports to an XML file.
+</sentence>
+<sentence>
 You can also transform the data to another presentation format using an Extensible Style Language (XSL) file during the export process.
+</sentence>
+<sentence>
 You can export tables, queries, and the data behind forms or reports from a Microsoft Access database (.mdb) as well as tables, views, stored produces, functions, and the data behind forms and reports from a Microsoft Access project (.adp).
+</sentence>
+<sentence>
 Exporting tables, queries, views, datasheets, forms or reports
+</sentence>
+<sentence>
 You can export a database object as an XML document in several ways:
+</sentence>
+<sentence>
 You can export just the data from a table, query, datasheet, form, or report into an XML file.
+</sentence>
+<sentence>
 This data is saved to a file named .xml.
+</sentence>
+<sentence>
 You can export just the schema (data structure) of a table, query, datasheet, form, or report to an XML schema file.
+</sentence>
+<sentence>
 An XML schema file is a formal specification of the rules for an XML document, providing a series of element names, as well as which elements are allowed in the document and in what combinations.
+</sentence>
+<sentence>
 If you select to save the schema as XSD, the file is saved as .xsd.
+</sentence>
+<sentence>
 Note
+</sentence>
+<sentence>
 When you export a table to an XML document, you can also export related tables.
+</sentence>
+<sentence>
 For example, if you export a table of Customers Orders, you can also choose to export a related Orders Details table and Customers table into the same file.
+</sentence>
+<sentence>
 If selected, you can also save the structure of a table, query, datasheet, form, or report into a file that describes the presentation and connection information.
+</sentence>
+<sentence>
 For forms and reports, this file is saved in an XML-based language called ReportML which provides presentation data as well as a data model for creating a data access page.
+</sentence>
+<sentence>
 For tables, queries-views, and datasheets, the presentation file is a spreadsheet-like template.
+</sentence>
+<sentence>
 This file is saved as _report.xml.
+</sentence>
+<sentence>
 In addition, when you choose to save the data as XML, you can specify that the data be transformed to a custom display format by using an existing .xsl file.
+</sentence>
+<sentence>
 If no .xsl file is specified, the data is saved in standard XML format.
+</sentence>
+<sentence>
 Note that if no data is selected for export then a presentation format is also unavailable.
+</sentence>
+<sentence>
 What is ReportML?
+</sentence>
+<sentence>
 ReportML is a "language" developed by Microsoft and specific to Access which can be used to describe Access database objects in XML.
+</sentence>
+<sentence>
 The ReportML language is made up of a set of tags that describe a form, report or data access page's properties, events, and attributes.
+</sentence>
+<sentence>
 When you export data from Access to an XML file, you choose to save the structure of a form or report into a ReportML format.
+</sentence>
+<sentence>
 The ReportML file can be used to convert the saved data into a data access page.
+</sentence>
+<sentence>
 Well-formed documents
+</sentence>
+<sentence>
 Any XML document produced by Access is well-formed, which means that it conforms to the basic rules of XML.
+</sentence>
+<sentence>
 That is:
+</sentence>
+<sentence>
 Each XML document must have a unique root element (an element encompassing the entire document).
+</sentence>
+<sentence>
 All start and end tags match.
+</sentence>
+<sentence>
 XML tags are case-sensitive.
+</sentence>
+<sentence>
 For each start tag, there is a corresponding end tag.
+</sentence>
+<sentence>
 Empty elements can be denoted by a special shorthand tag.
+</sentence>
+<sentence>
 Again, XML tags are case-sensitive.
+</sentence>
+<sentence>
 Access ReportML will not write out any empty tags.
+</sentence>
+<sentence>
 Elements do not overlap.
+</sentence>
+<sentence>
 In other words, start and end tag must be properly nested within other elements.
+</sentence>
+<sentence>
 Certain reserve characters are part of the XML syntax and will not be interpreted as themselves if used in the data portion of an element.
+</sentence>
+<sentence>
 You need to substitute a special character sequence (called an "entity" by XML) as follows:
+</sentence>
+<sentence>
 Character
+</sentence>
+<sentence>
 Entity
+</sentence>
+<sentence>
 The following is an example of a well-formed XML document:
+</sentence>
+<sentence>
 where:
+</sentence>
+<sentence>
 is a declaration that states that this is an XML document and gives the version number.
+</sentence>
+<sentence>
 The declaration is optional but is recommended in any XML document.
+</sentence>
+<sentence>
 is the root element which encompasses the entire document.
+</sentence>
+<sentence>
 is a start tag and is an end tag which together describe an element of data, in this case, the customer's name.
+</sentence>
+<sentence>
 Notice that each tag set has both start and end tags and is case sensitive, and that the tag sets are properly nested within each other.
+</sentence>
+<sentence>
 Also notice the entity &amp;apos; which will be transformed to an apostrophe when the data is imported by the receiving application.
+</sentence>
+<sentence>
 The apostrophe has a special purpose in an XML document and can be misinterpreted if used directly in the text.
+</sentence>
+<sentence>
 The converted data will be displayed as Mom's Boston Crab Meat.
+</sentence>
+<sentence>
 White space can be used throughout the document to enhance readability.
+</sentence>
+<sentence>
 If a schema is specified while exporting from Access, then the XML documents created are considered to be valid XML documents.
+</sentence>
+<sentence>
 This means that in addition to being well-formed, the documents conform to a defined schema.
+</sentence>
+<sentence>
 About exporting or copying a PivotTable view to Excel or other applications
+</sentence>
+<sentence>
 If you are familiar with Microsoft Excel PivotTable reports and want to work with the data in Excel, there are two ways to accomplish this.
+</sentence>
+<sentence>
 Exporting data to an interactive Excel PivotTable report
+</sentence>
+<sentence>
 To view and modify the contents of a PivotTable view by using Excel, you can export the PivotTable view to Excel.
+</sentence>
+<sentence>
 Preparing for export to Excel
+</sentence>
+<sentence>
 Excel PivotTable reports can not display detail fields.
+</sentence>
+<sentence>
 When you export to Excel, detail fields will be available on the PivotTable toolbar in Excel, but the fields won't be displayed in the report.
+</sentence>
+<sentence>
 If you want the Excel PivotTable report to reflect the appearance of the PivotTable view, before you export to an Excel PivotTable report, either move all the fields out of the detail area, or hide detail data for items and cells so that the detail area is not displayed.
+</sentence>
+<sentence>
 After you export
+</sentence>
+<sentence>
 You might notice some differences in your PivotTable view after you export it to Excel.
+</sentence>
+<sentence>
 This is because PivotTable views use the Microsoft Office PivotTable Component, and Excel PivotTable reports either do not support certain PivotTable list features, or they implement some features differently.
+</sentence>
+<sentence>
 For information about differences between PivotTable lists and Excel PivotTable reports, see Excel Help.
+</sentence>
+<sentence>
 Copying data to another program for noninteractive use
+</sentence>
+<sentence>
 Copying to other programs
+</sentence>
+<sentence>
 You can also copy data displayed in a PivotTable view to other programs, such as Microsoft FrontPage.
+</sentence>
+<sentence>
 When you copy data to a program other than Excel or Word that does not support the HTML format used by PivotTable views, the data is copied as unformatted text.
+</sentence>
+<sentence>
 About filtering data in PivotTable view
+</sentence>
+<sentence>
 You can use the filter feature to find specific data values or all data that matches a value.
+</sentence>
+<sentence>
 Filtering techniques
+</sentence>
+<sentence>
 Filtering a field (Autofiltering)
+</sentence>
+<sentence>
 You can filter fields in the row, column, and detail areas.
+</sentence>
+<sentence>
 When you filter a field, you select one or more items of data in the field that you want to view, and hide the other items.
+</sentence>
+<sentence>
 Filtered PivotTable list or view
+</sentence>
+<sentence>
 1 First, the Sport field is filtered to display only Golf sales.
+</sentence>
+<sentence>
 2 and then the Quarter field is filtered to display only Golf sales in Qtr3.
+</sentence>
+<sentence>
 3 When you filter a field, the drop-down arrow Field arrow for the filtered field changes to blue instead of black, and the AutoFilter button on the toolbar is selected.
+</sentence>
+<sentence>
 Filtering a field is particularly helpful when you have a large amount of source data but you want to focus on specific areas.
+</sentence>
+<sentence>
 2 Category field Region filtered to show South and West region items
+</sentence>
+<sentence>
 Conditional filtering
+</sentence>
+<sentence>
 You can apply a filter to a series or category field to show the top or bottom n items based on a total.
+</sentence>
+<sentence>
 For example, you can filter for the three cities that generated the most sales or the five products that are least profitable.
+</sentence>
+<sentence>
 Instead of n items, you can also choose to filter for a certain percentage of items.
+</sentence>
+<sentence>
 For example, you can filter for the top 25 % or bottom 25 % of salespeople based on the number of orders handled.
+</sentence>
+<sentence>
 If there are 40 salespeople, after the filter is applied, you will see data for 10 people.
+</sentence>
+<sentence>
 When you filter a field, you can display the data for a single item, or you can select some items to display and other items to hide.
+</sentence>
+<sentence>
 Chart with category field
+</sentence>
+<sentence>
 Chart with category field filtered
+</sentence>
+<sentence>
 1 Category field Region showing all items (not filtered)
+</sentence>
+<sentence>
 You can filter on more than one field at a time to further narrow the focus.
+</sentence>
+<sentence>
 Filtering based on the data in one cell (Filter by Selection)
+</sentence>
+<sentence>
 You can filter a field to display only data that matches the value in a selected cell.
+</sentence>
+<sentence>
 Filtering by selection is particularly useful for fields in the detail area, when you want to view all of the rows that contain a particular value.
+</sentence>
+<sentence>
 Using a field in the Filter axis
+</sentence>
+<sentence>
 You can also filter data by using filter fields.
+</sentence>
+<sentence>
 When you select one or more items in the filter field, the data that's displayed and calculated in the entire PivotTable view changes to reflect those items.
+</sentence>
+<sentence>
 You can add new filter fields or move existing fields to the filter area.
+</sentence>
+<sentence>
 Filter field example
+</sentence>
+<sentence>
 1 Filter field
+</sentence>
+<sentence>
 Conditional filtering
+</sentence>
+<sentence>
 Rules for moving an interior horizontal line
+</sentence>
+<sentence>
 If you move the line upward, the distance between the moving line and the nearest parallel line below remains constant, and the perpendicular line above the moving line contracts.
+</sentence>
+<sentence>
 If you move the line downward, the distance between the moving line and the nearest parallel line below remains constant, and the perpendicular line above the moving line lengthens.
+</sentence>
+<sentence>
 Rules for moving an exterior line
+</sentence>
+<sentence>
 If you are moving the line away from the center of the grid, the nearest parallel line doesn't move, and the distance between the line you are moving and the nearest parallel line grows larger.
+</sentence>
+<sentence>
 If you are moving the line towards the center of the grid, the nearest parallel line doesn't move, and the distance between the line you are moving and the nearest parallel line grows smaller.
+</sentence>
+<sentence>
 Copy a line in a grid of grouped lines
+</sentence>
+<sentence>
 Select the line you want to copy and press CTRL–C.
+</sentence>
+<sentence>
 Press CTRL–V to paste the line.
+</sentence>
+<sentence>
 When you copy an interior vertical line, the new line is halfway between the line you copied and the line to the right of the line you copied.
+</sentence>
+<sentence>
 When you copy an interior horizontal line, the new line is halfway between the line you copied and the line below the line you copied.
+</sentence>
+<sentence>
 When you copy an exterior line, the new line is located halfway between the line you copied and the nearest line parallel to the line you copied.
+</sentence>
+<sentence>
 After you paste the line, you do not need to recreate the group – the new line is automatically part of the group.
+</sentence>
+<sentence>
 About handling Null values in calculations
+</sentence>
+<sentence>
 The aggregate functions won't include records containing blank (Null) values in their calculations.
+</sentence>
+<sentence>
 For example, the Count function returns a count of all the records without Null values.
+</sentence>
+<sentence>
 If you want to find the total number of records including those with Nullvalues, use Count with the wildcard character.
+</sentence>
+<sentence>
 To count Null values when using the other aggregate functions, use the Nz function, which converts Null values to zeroes so they are included in a calculation.
+</sentence>
+<sentence>
 If some records in one of the fields you used in the expression might have a Null value, you can convert the Null value to zero using the Nz function as shown in the following example:
+</sentence>
+<sentence>
 About installing, licensing, and distributing Office Web Components
+</sentence>
+<sentence>
 When you design a Web page using Microsoft Office Web Components, any user with a Microsoft Office 2002 license can interact with the components in the browser to the level of interactivity you provide.
+</sentence>
+<sentence>
 That is, a user with an appropriate license can make changes to data in a spreadsheet, change formatting, drag fields in a chart or PivotTable List, and so on, as long as you didn't protect these options at design time.
+</sentence>
+<sentence>
 Users with an Office 2002 license can also create, design, and modify components in a design environment such as Microsoft FrontPage or Microsoft Access.
+</sentence>
+<sentence>
 Users who do not have Office 2002 licenses can view the components and the data in them, and can print the view of the components, but they can not interact with the components or manipulate them in a design environment.
+</sentence>
+<sentence>
 This means that if you distribute a Web page that uses components, users who have Office 2002 licenses will have access to all functionality provided, but users without a license can only view the data and information you've provided.
+</sentence>
+<sentence>
 Installing the Office Web Components
+</sentence>
+<sentence>
 Microsoft Office Web Components are installed with Microsoft Office 2002 and Microsoft Office applications, or they can be installed separately from an installation point provided by the Web page designer.
+</sentence>
+<sentence>
 When you distribute a Web page that uses components, users who do not have the components installed will be prompted to install the components, provided the Web page designer configures the components to do so.
+</sentence>
+<sentence>
 The Web page designer must also provide an installation point for the components and a pointer to that location on the component installation page.
+</sentence>
+<sentence>
 For more information, see the Microsoft Office 2002 Resource Kit.
+</sentence>
+<sentence>
 Once the Office Web Components are installed, users who have access to an Office 2002 license will be able to interact with and make changes to the components.
+</sentence>
+<sentence>
 Users without licenses will be able to view and print the components and the data in them, but they can not interact with or make changes to them.
+</sentence>
+<sentence>
 Details on licensing and functionality
+</sentence>
+<sentence>
 Office 2002 installed on computer
+</sentence>
+<sentence>
 Users have full functionality and interactivity with components, including run-time and design-time capabilities.
+</sentence>
+<sentence>
 Office 2002 application installed on computer
+</sentence>
+<sentence>
 Users can interact with the component in design mode in that application only (not in the browser or in other applications).
+</sentence>
+<sentence>
 Office 2002 site license (user doesn't have Office 2002 installed on computer, but user's organization has an enterprise or site license agreement)
+</sentence>
+<sentence>
 However, the Web page designer must provide a location from which components can be downloaded, and must reference the site license in a license package file (.lpk) that is associated with one or more Web pages.
+</sentence>
+<sentence>
 You use the License Package Authoring Tool to create an appropriate license file for pages.
+</sentence>
+<sentence>
 For more information, see MSDN Online.
+</sentence>
+<sentence>
 No Office 2002, Office 2002 applications, or site licenses
+</sentence>
+<sentence>
 Users can view and print the components in view-only mode, but they can not interact with the components or use the design capabilities.
+</sentence>
+<sentence>
 About avoiding the mixing of queries created under different ANSI SQL query modes
+</sentence>
+<sentence>
 The two ANSI SQL query modes, ANSI-89 and ANSI-92, are not compatible.
+</sentence>
+<sentence>
 When you create a Microsoft Access database, you need to decide which query mode you are going to use, because mixing queries created in both query modes could produce runtime errors or unexpected results.
+</sentence>
+<sentence>
 The range of data types, reserved words, and wildcard characters are different in each query mode.
+</sentence>
+<sentence>
 Example of a query using wildcard characters
+</sentence>
+<sentence>
 A query that uses wildcard characters in a criteria expression can produce different results under each query mode.
+</sentence>
+<sentence>
 For example, if you run:
+</sentence>
+<sentence>
 An ANSI-89 SQL query in a database set to ANSI-92 query mode, such as:
+</sentence>
+<sentence>
 SELECT asterisk FROM Customers WHERE Country Like U %
+</sentence>
+<sentence>
 It returns all customers from a (country|region) named "U % ", not all (countries|regions) beginning with the letter "U ", because the percent sign (%) is not a wildcard character in ANSI-89 SQL.
+</sentence>
+<sentence>
 Example of a query with a duplicate field and alias name
+</sentence>
+<sentence>
 If a query uses an alias that is the same as a base column name and you create a calculated field using the ambiguous name, the query will produce different results under each query mode.
+</sentence>
+<sentence>
 How to avoid problems caused by mixing queries under different ANSI SQL query modes in the same database
+</sentence>
+<sentence>
 In general, avoid doing the following to prevent problems caused by mixing queries created under different ANSI SQL query modes:
+</sentence>
+<sentence>
 Converting an Access database set to ANSI-92 SQL query mode from 2002 file format to 2000 or 97 file format.
+</sentence>
+<sentence>
 ANSI-92 SQL query mode is only supported in the 2002 file format.
+</sentence>
+<sentence>
 Changing the ANSI SQL query mode for the current database after you've created one or more queries.
+</sentence>
+<sentence>
 If you must do this, retest the existing queries to ensure that they still run or produce expected results, and rewrite the queries if necessary.
+</sentence>
+<sentence>
 Importing queries created under one ANSI SQL query mode into an Access database set to another mode, or exporting queries created under one ANSI SQL query mode to an Access database set to another mode.
+</sentence>
+<sentence>
 Changing the ANSI SQL query mode in an existing application.
+</sentence>
+<sentence>
 This could break your application and require rewriting your application.
+</sentence>
+<sentence>
 In Access 2000, you can only programmatically change the ANSI SQL query mode and any queries created under ANSI-92 mode were hidden in the Database window.
+</sentence>
+<sentence>
 In Access 2002, you or a user can change ANSI SQL query mode through the user interface and ANSI-92 queries are no longer hidden in the Database window, so you should prevent accidental or intentional changes to the ANSI SQL query mode of your application by protecting your code and preventing the changing of the query mode through the application's user interface.
+</sentence>
+<sentence>
 Using ambiguous aliases and column names.
+</sentence>
+<sentence>
 To avoid confusion, ensure that aliases and column names are always unique in an SQL statement.
+</sentence>
+<sentence>
 About how Access searches for reference libraries
+</sentence>
+<sentence>
 The Visual Basic project of a Microsoft Access file contains references to object libraries, and it can also contain references to other files, including other Access files.
+</sentence>
+<sentence>
 The locations of referenced files are specified in the References dialog box that is available from the References command on the Tools menu in the Visual Basic Editor.
+</sentence>
+<sentence>
 When you open an Access file, if Access doesn't find a referenced file in the specified location, it searches for the reference as follows.
+</sentence>
+<sentence>
 First, Access searches for a RefLibPaths key in the following location in the Microsoft Windows Registry:
+</sentence>
+<sentence>
 If the key exists, Access checks for the existence of a value name that matches the name of the referenced file.
+</sentence>
+<sentence>
 If it finds a matching value name, Access loads the reference from the path specified in the corresponding value data.
+</sentence>
+<sentence>
 If Access doesn't find a RefLibPaths key, it searches for the referenced file in the locations listed below in the following order:
+</sentence>
+<sentence>
 Application folder containing the application (the folder where Msaccess.exe is located).
+</sentence>
+<sentence>
 Current folder.
+</sentence>
+<sentence>
 System folders (the System and System32 folders located in the Windows or WINNT folder).
+</sentence>
+<sentence>
 PATH environment variable.
+</sentence>
+<sentence>
 For more information about environment variables, see Windows Help.
+</sentence>
+<sentence>
 The folder that contains the Access file, and any subfolders located in that folder.
+</sentence>
+<sentence>
 If Access still can't find the reference after performing this search, you must fix the reference manually.
+</sentence>
+<sentence>
 About saving an object as a data access page
+</sentence>
+<sentence>
 You can also save tables, views, stored procedures, functions, and forms in a Microsoft Access project as a data access page.
+</sentence>
+<sentence>
 Saving an object as a data access page enables you to quickly convert an object into a page, and allows users of your application to review, enter, and analyze data over the Internet or an intranet.
+</sentence>
+<sentence>
 For example, if you have a sales report that you want to make available over the Web, instead of creating a data access page and customizing it to look like the sales report, you can save the report as a data access page.
+</sentence>
+<sentence>
 Using the Save As command on the File menu will save a data access page that is similar in appearance and functionality to the original report.
+</sentence>
+<sentence>
 If you want to make changes to the design of the resulting page, you can open the page in Design view and make any changes you want.
+</sentence>
+<sentence>
 The default view – the view in which the object is open when you carry out the Save As command – determines the design of the data access page.
+</sentence>
+<sentence>
 The following table lists the outcome of each view.
+</sentence>
+<sentence>
 Default view (current view)
+</sentence>
+<sentence>
 Outcome
+</sentence>
+<sentence>
 Datasheet view
+</sentence>
+<sentence>
 A page that has controls arranged as a datasheet
+</sentence>
+<sentence>
 Form view
+</sentence>
+<sentence>
 PivotTable view
+</sentence>
+<sentence>
 A page that uses a Microsoft Office PivotTable Component
+</sentence>
+<sentence>
 PivotChart view
+</sentence>
+<sentence>
 A page that uses a Microsoft Office Chart Component
+</sentence>
+<sentence>
 If you carry out the Save As command after making changes to the object's formatting, but before saving your changes, the current formatting – not the saved formatting – will be used to create the page.
+</sentence>
+<sentence>
 Implications of using the Save As command
+</sentence>
+<sentence>
 Control support
+</sentence>
+<sentence>
 Such controls will be left unbound on a page.
+</sentence>
+<sentence>
 Subforms and subreports
+</sentence>
+<sentence>
 Subforms and subreports on a form or report are not converted when you carry out the Save As command.
+</sentence>
+<sentence>
 However, you can open the page in Design view and create additional group levels to make the page appear similar to the original object.
+</sentence>
+<sentence>
 Control naming
+</sentence>
+<sentence>
 Controls on forms and reports need not have unique names, but names of controls on a page must be unique.
+</sentence>
+<sentence>
 While creating the page, Access will change control names that are not unique.
+</sentence>
+<sentence>
 Controls in the header and footer sections
+</sentence>
+<sentence>
 Controls in the Form, Report, or page header sections will be placed as unbound controls in the caption section of the outermost group level.
+</sentence>
+<sentence>
 Controls in the Form, Report, or page footer sections will be placed as unbound controls in the navigation section of the outermost group level.
+</sentence>
+<sentence>
 Code in a form or report that can not run from a data access page is imported into the page as a comment block at the end of the document.
+</sentence>
+<sentence>
 Pictures in a form or report are converted to bitmaps and placed in a folder named "Images ".
+</sentence>
+<sentence>
 Group level properties
+</sentence>
+<sentence>
 By default, the AllowAdditions, AllowDeletions, and AllowEdits properties of all group levels in a data access page created from a report are set to False.
+</sentence>
+<sentence>
 However, you can open the page in Design view and change the property settings.
+</sentence>
+<sentence>
 Expressions that refer to form or subform properties are ignored.
+</sentence>
+<sentence>
 About sorting data in PivotTable or PivotChart view
+</sentence>
+<sentence>
 It was a wrong number that started it, the telephone ringing three times in the dead of night, and the voice on the other end asking for someone he was not.
+</sentence>
+<sentence>
 Much later, when he was able to think about the things that happened to him, he would conclude that nothing was real except chance.
+</sentence>
+<sentence>
 But that was much later.
+</sentence>
+<sentence>
 In the beginning, there was simply the event and its consequences.
+</sentence>
+<sentence>
 Whether it might have turned out differently, or whether it was all predetermined with the first word that came from the stranger's mouth, is not the question.
+</sentence>
+<sentence>
 The question is the story itself, and whether or not it means something is not for the story to tell.
+</sentence>
+<sentence>
 As for Quinn, there is little that need detain us.
+</sentence>
+<sentence>
 Who he was, where he came from, and what he did are of no great importance.
+</sentence>
+<sentence>
 We know, for example, that he was thirty-five years old.
+</sentence>
+<sentence>
 We know that he had once been married, had once been a father, and that both his wife and son were now dead.
+</sentence>
+<sentence>
 We also know that he wrote books.
+</sentence>
+<sentence>
 To be precise, we know that he wrote mystery novels.
+</sentence>
+<sentence>
 These works were written under the name of William Wilson, and he produced them at the rate of about one a year, which brought in enough money for him to live modestly in a small New York apartment.
+</sentence>
+<sentence>
 Because he spent no more than five or six months on a novel, for the rest of the year he was free to do as he wished.
+</sentence>
+<sentence>
 He read many books, he looked at paintings, he went to the movies.
+</sentence>
+<sentence>
 In the summer he watched baseball on television; in the winter he went to the opera.
+</sentence>
+<sentence>
 More than anything, however, what he liked to do was walk.
+</sentence>
+<sentence>
 Nearly every day, rain or shine, hot or cold, he would leave his apartment to walk through the city – never really going anywhere, but simply going wherever his legs happened to take him.
+</sentence>
+<sentence>
 New York was an inexhaustible space, a labyrinth of endless steps, and no matter how far he walked, no matter how well he came to know its neighborhoods and streets, it always left him with the feeling of being lost.
+</sentence>
+<sentence>
 Lost, not only in the city, but within himself as well.
+</sentence>
+<sentence>
 Each time he took a walk, he felt as though he were leaving himself behind, and by giving himself up to the movement of the streets, by reducing himself to a seeing eye, he was able to escape the obligation to think, and this, more than anything else, brought him a measure of peace, a salutatory emptiness within.
+</sentence>
+<sentence>
 The world was outside of him, around him, before him, and the speed with which it kept changing made it impossible for him to dwell on any one thing for very long.
+</sentence>
+<sentence>
 Motion was of the essence, the act of putting one foot in front of the other and allowing himself to follow the drift of his own body.
+</sentence>
+<sentence>
 By wandering aimlessly, all places became equal, and it no longer mattered where he was.
+</sentence>
+<sentence>
 On his best walks, he was able to feel that he was nowhere.
+</sentence>
+<sentence>
 New York was the nowhere he had built around himself, and he realized that he had no intention of ever leaving it again.
+</sentence>
+<sentence>
 In the past, Quinn had been more ambitious.
+</sentence>
+<sentence>
 As a young man, he had published several books of poetry, had written plays, critical essays, and had worked on a number of long translations.
+</sentence>
+<sentence>
 But quite abruptly, he had given up all that.
+</sentence>
+<sentence>
 A part of him had died, he told his friends, and he did not want it coming back to haunt him.
+</sentence>
+<sentence>
 It was then that he had taken on the name of William Wilson.
+</sentence>
+<sentence>
 Quinn was no longer that part of him that could write books, and although in many ways Quinn continued to exist, he no longer existed for anyone but himself.
+</sentence>
+<sentence>
 The next morning, Quinn woke up earlier than he had in several weeks.
+</sentence>
+<sentence>
 As he drank his coffee, buttered his toast, and read through the baseball scores in the paper (the Mets had lost again, two to one, on a ninth inning error), it did not occur to him that he was going to show up for his appointment.
+</sentence>
+<sentence>
 Even that locution, 'his appointment', seemed odd to him.
+</sentence>
+<sentence>
 It wasn't his appointment, it was Paul Auster's.
+</sentence>
+<sentence>
 And who that person was he had no idea.
+</sentence>
+<sentence>
 Nevertheless, as time wore on he found himself doing a good imitation of a man preparing to go out.
+</sentence>
+<sentence>
 He cleared the table of the breakfast dishes, tossed the newspaper on the couch, went into the bathroom, showered, shaved, went on to the bedroom wrapped in two towels, opened the closet and picked out his clothes for the day.
+</sentence>
+<sentence>
 He found himself tending toward a jacket and a tie.
+</sentence>
+<sentence>
 Quinn had not worn a tie since the funerals of his wife and son, and he could not even remember if he still owned one.
+</sentence>
+<sentence>
 But there it was, hanging amidst the debris of his wardrobe.
+</sentence>
+<sentence>
 He dismissed a white shirt as too formal, however, and instead chose a gray and red check affair to go with the gray tie.
+</sentence>
+<sentence>
 He put them on in a kind of trance.
+</sentence>
+<sentence>
 It was not until he had his hand on the doorknob that he began to suspect what he was doing.
+</sentence>
+<sentence>
 I seem to be going out, he said to himself.
+</sentence>
+<sentence>
 But if I am going out, where exactly am I going?
+</sentence>
+<sentence>
 An hour later, as he climbed from the number 4 bus at 70th Street and Fifth Avenue, he still had not answered the question.
+</sentence>
+<sentence>
 To one side of him was the park, green in the morning sun, with sharp, fleeting shadows; to the other side was the Frick, white and austere, as if abandoned to the dead.
+</sentence>
+<sentence>
 He thought for a moment of Vermeer's Soldier and Young Girl Smiling, trying to remember the expression on the girl's face, the exact position of her hands around the cup, the red back of the faceless man.
+</sentence>
+<sentence>
 In his mind, he caught a glimpse of the blue map on the wall and the sunlight pouring through the window, so like the sunlight that surrounded him now.
+</sentence>
+<sentence>
 He was walking.
+</sentence>
+<sentence>
 He was crossing the street and moving eastward.
+</sentence>
+<sentence>
 At Madison Avenue he turned right and went south for a block, then turned left and saw where he was.
+</sentence>
+<sentence>
 I seem to have arrived, he said to himself.
+</sentence>
+<sentence>
 He stood before the building and paused.
+</sentence>
+<sentence>
 It suddenly did not seem to matter anymore.
+</sentence>
+<sentence>
 He felt remarkably calm, as if everything had already happened to him.
+</sentence>
+<sentence>
 As he opened the door that would lead him into the lobby, he gave himself one last word of advice.
+</sentence>
+<sentence>
 If all this is really happening, he said, then I must keep my eyes open.
+</sentence>
+<sentence>
 It was a woman who opened the apartment door.
+</sentence>
+<sentence>
 For some reason, Quinn had not expected this, and it threw him off track.
+</sentence>
+<sentence>
 Already, things were happening too fast.
+</sentence>
+<sentence>
 Before he had a chance to absorb the woman's presence, to describe her to himself and form his impressions, she was talking to him, forcing him to respond.
+</sentence>
+<sentence>
 Therefore, even in those first moments, he had lost ground, was starting to fall behind himself.
+</sentence>
+<sentence>
 Later, when he had time to reflect on these events, he would manage to piece together his encounter with the woman.
+</sentence>
+<sentence>
 But that was the work of memory, and remembered things, he knew, had a tendency to subvert the things remembered.
+</sentence>
+<sentence>
 As a consequence, he could never be sure of any of it.
+</sentence>
+<sentence>
 The woman was thirty, perhaps thirty-five; average height at best; hips a touch wide, or else voluptuous, depending on your point of view; dark hair, dark eyes, and a look in those eyes that was at once self-contained and vaguely seductive.
+</sentence>
+<sentence>
 She wore a black dress and very red lipstick.
+</sentence>
+<sentence>
 Mr Auster? A tentative smile; a questioning tilt to the head.
+</sentence>
+<sentence>
 That's right, said Quinn.
+</sentence>
+<sentence>
 I'm Virginia Stillman, the woman began.
+</sentence>
+<sentence>
 Peter's wife.
+</sentence>
+<sentence>
 He's been waiting for you since eight o'clock.
+</sentence>
+<sentence>
 The appointment was for ten, said Quinn, glancing at his watch.
+</sentence>
+<sentence>
 It was exactly ten.
+</sentence>
+<sentence>
 He's been frantic, the woman explained.
+</sentence>
+<sentence>
 I've never seen him like this before.
+</sentence>
+<sentence>
 He just couldn't wait.
+</sentence>
+<sentence>
 She opened the door for Quinn.
+</sentence>
+<sentence>
 As he crossed the threshold and entered the apartment, he could feel himself going blank, as if his brain had suddenly shut off.
+</sentence>
+<sentence>
 He had wanted to take in the details of what he was seeing, but the task was somehow beyond him at that moment.
+</sentence>
+<sentence>
 The apartment loomed up around him as a kind of blur.
+</sentence>
+<sentence>
 He realized that it was large, perhaps five or six rooms, and that it was richly furnished, with numerous art objects, silver ashtrays, and elaborately framed paintings on the walls.
+</sentence>
+<sentence>
 But that was all.
+</sentence>
+<sentence>
 No more than a general impression – even though he was there, looking at those things with his own eyes.
+</sentence>
+<sentence>
 He found himself sitting on a sofa, alone in the living room.
+</sentence>
+<sentence>
 He remembered now that Mrs. Stillman had told him to wait there while she went to find her husband.
+</sentence>
+<sentence>
 He couldn't say how long it had been.
+</sentence>
+<sentence>
 Surely no more than a minute or two.
+</sentence>
+<sentence>
 But from the way the light was coming through the windows, it seemed to be almost noon.
+</sentence>
+<sentence>
 It did not occur to him, however, to consult his watch.
+</sentence>
+<sentence>
 The smell of Virginia Stillman's perfume hovered around him, and he began to imagine what she looked like without any clothes on.
+</sentence>
+<sentence>
 Then he thought about what Max Work might have been thinking, had he been there.
+</sentence>
+<sentence>
 He decided to light a cigarette.
+</sentence>
+<sentence>
 He blew the smoke into the room.
+</sentence>
+<sentence>
 It pleased him to watch it leave his mouth in gusts, disperse, and take on new definition as the light caught it.
+</sentence>
+<sentence>
 He heard the sound of someone entering the room behind him.
+</sentence>
+<sentence>
 Quinn stood up from the sofa and turned around, expecting to see Mrs. Stillman.
+</sentence>
+<sentence>
 Instead, it was a young man, dressed entirely in white, with the white-blond hair of a child.
+</sentence>
+<sentence>
 Uncannily, in that first moment, Quinn thought of his own dead son.
+</sentence>
+<sentence>
 Then, just as suddenly as the thought had appeared, it vanished.
+</sentence>
+<sentence>
 Peter Stillman walked into the room and sat down in a red velvet armchair opposite Quinn.
+</sentence>
+<sentence>
 He said not a word as he made his way to his seat, nor did he acknowledge Quinn's presence.
+</sentence>
+<sentence>
 The act of moving from one place to another seemed to require all his attention, as though not to think of what he was doing would reduce him to immobility.
+</sentence>
+<sentence>
 Quinn had never seen anyone move in such a manner, and he realized at once that this was the same person he had spoken to on the phone.
+</sentence>
+<sentence>
 The body acted almost exactly as the voice had: machine-like, fitful, alternating between slow and rapid gestures, rigid and yet expressive, as if the operation were out of control, not quite corresponding to the will that lay behind it.
+</sentence>
+<sentence>
 It seemed to Quinn that Stillman's body had not been used for a long time and that all its functions had been relearned, so that motion had become a conscious process, each movement broken down into its component submovements, with the result that all flow and spontaneity had been lost.
+</sentence>
+<sentence>
 It was like watching a marionette trying to walk without strings.
+</sentence>
+<sentence>
 Everything about Peter Stillman was white.
+</sentence>
+<sentence>
 White shirt, open at the neck; white pants, white shoes, white socks.
+</sentence>
+<sentence>
 Against the pallor of his skin, the flaxen thinness of his hair, the effect was almost transparent, as though one could see through to the blue veins behind the skin of his face.
+</sentence>
+<sentence>
 This blue was almost the same as his eyes: a milky blue that seemed to dissolve into a mixture of sky and clouds.
+</sentence>
+<sentence>
 Quinn could not imagine himself addressing a word to this person.
+</sentence>
+<sentence>
 It was as though Stillman's presence was a command to be silent.
+</sentence>
+<sentence>
 Stillman settled slowly into his chair and at last turned his attention to Quinn.
+</sentence>
+<sentence>
 As their eyes met, Quinn suddenly felt that Stillman had become invisible.
+</sentence>
+<sentence>
 He could see him sitting in the chair across from him, but at the same time it felt as though he was not there.
+</sentence>
+<sentence>
 It occurred to Quinn that perhaps Stillman was blind.
+</sentence>
+<sentence>
 But no, that did not seem possible.
+</sentence>
+<sentence>
 The man was looking at him, even studying him, and if recognition did not flicker across his face, it still held something more than a blank stare.
+</sentence>
+<sentence>
 Quinn did not know what to do.
+</sentence>
+<sentence>
 He sat there dumbly in his seat, looking back at Stillman.
+</sentence>
+<sentence>
 A long time passed.
+</sentence>
+<sentence>
 No questions, please, the young man said at last.
+</sentence>
+<sentence>
 Yes. No. Thank you.
+</sentence>
+<sentence>
 He paused for a moment.
+</sentence>
+<sentence>
 I am Peter Stillman.
+</sentence>
+<sentence>
 I say this of my free will. Yes.
+</sentence>
+<sentence>
 That is not my real name. No.
+</sentence>
+<sentence>
 Of course, my mind is not all it should be.
+</sentence>
+<sentence>
 But nothing can be done about that. No. About that. No, no. Not anymore.
+</sentence>
+<sentence>
 You sit here and think: who is this person talking to me?
+</sentence>
+<sentence>
 What are these words coming from his mouth?
+</sentence>
+<sentence>
 I will tell you.
+</sentence>
+<sentence>
 Or else I will not tell you.
+</sentence>
+<sentence>
 At the corner of 72nd Street and Madison Avenue, he waved down a cab.
+</sentence>
+<sentence>
 As the car rattled through the park toward the West Side, Quinn looked out the window and wondered if these were the same trees that Peter Stillman saw when he walked out into the air and the light.
+</sentence>
+<sentence>
 He wondered if Peter saw the same things as he did, or whether the world was a different place for him.
+</sentence>
+<sentence>
 And if a tree was not a tree, he wondered what it really was.
+</sentence>
+<sentence>
 After the cab had dropped him off in front of his house, Quinn realized that he was hungry.
+</sentence>
+<sentence>
 He had not eaten since breakfast early that morning.
+</sentence>
+<sentence>
 It was strange, he thought, how quickly time had passed in the Stillman apartment.
+</sentence>
+<sentence>
 If his calculations were correct, he had been there for more than fourteen hours.
+</sentence>
+<sentence>
 Within himself, however, it felt as though his stay had lasted three or four hours at most.
+</sentence>
+<sentence>
 He shrugged at the discrepancy and said to himself, I must learn to look at my watch more often.
+</sentence>
+<sentence>
 He retraced his path along 107th Street, turned left on Broadway, and began walking uptown, looking for a suitable place to eat.
+</sentence>
+<sentence>
 A bar did not appeal to him tonight – eating in the dark, the press of boozy chatter – although normally he would have welcomed it.
+</sentence>
+<sentence>
 As he crossed 112th Street, he saw that the Heights Luncheonette was still open and decided to go in.
+</sentence>
+<sentence>
 It was a brightly lit yet dreary place, with a large rack of girlie magazines on one wall, an area for stationery supplies, another area for newspapers, several tables for patrons, and a long Formica counter with swivel stools.
+</sentence>
+<sentence>
 A tall Puerto Rican man in a white cardboard chef's hat stood behind the counter.
+</sentence>
+<sentence>
 It was his job to make the food, which consisted mainly of gristle-studded hamburger patties, bland sandwiches with pale tomatoes and wilted lettuce, milkshakes, egg creams, and buns.
+</sentence>
+<sentence>
 To his right, ensconced behind the cash register, was the boss, a small balding man with curly hair and a concentration camp number tattoed on his forearm,
+</sentence>
+<sentence>
 lording it over his domain of cigarettes, pipes, and cigars.
+</sentence>
+<sentence>
 He sat there impassively, reading the night-owl edition of the next morning's Daily News.
+</sentence>
+<sentence>
 The place was almost deserted at that hour.
+</sentence>
+<sentence>
 He would arrive early, never later than seven o'clock and sit there with a take-out coffee, a buttered roll, and an open newspaper on his lap, watching the glass door of the hotel.
+</sentence>
+<sentence>
 By eight o'clock Stillman would come out, always in his long brown overcoat, carrying a large, old-fashioned carpet bag.
+</sentence>
+<sentence>
 For two weeks this routine did not vary. The old man would wander through the streets of the neighborhood, advancing slowly, sometimes by the merest of increments, pausing, moving on again, pausing once more, as though each step had to be weighed and measured before it could take its place among the sum total of steps.
+</sentence>
+<sentence>
 Moving in this manner was difficult for Quinn.
+</sentence>
+<sentence>
 He was used to walking briskly, and all this starting and stopping and shuffling began to be a strain, as though the rhythm of his body was being disrupted.
+</sentence>
+<sentence>
 He was hare in pursuit of the tortoise, and again and again he had to remind himself to hold back.
+</sentence>
+<sentence>
 What Stillman did on these walks remained something of a mystery to Quinn.
+</sentence>
+<sentence>
 He could, of course, see with his own eyes what happened, and all these things he dutifully recorded in his red notebook. But the meaning of these things continued to elude him.
+</sentence>
+<sentence>
 Stillman never seemed to be going anywhere in particular, nor did he seem to know where he was.
+</sentence>
+<sentence>
 and yet, as if by conscious design, he kept to a narrowly circumscribed area, bounded on the north by Riverside Park, and on the east by Amsterdam Avenue.
+</sentence>
+<sentence>
 No matter how haphazard his journeys seemed to be – and each day his itinerary was different – Stillman never crossed these borders.
+</sentence>
+<sentence>
 Such precision baffled Quinn, for in all other respects Stillman seemed to be aimless.
+</sentence>
+<sentence>
 As he walked, Stillman did not look up.
+</sentence>
+<sentence>
 His eyes were permanently fixed on the pavement, as though he were searching for something.
+</sentence>
+<sentence>
 Indeed, every now and then he would stoop down, pick some object off the ground, and examine it closely, turning it over and over in his hand.
+</sentence>
+<sentence>
 It made Quinn think of an archeologist inspecting a shard at some prehistoric ruin.
+</sentence>
+<sentence>
 Occasionally, after poring over an object in this way, Stillman would toss it back onto the sidewalk. But more often than not he would open his bag and lay the object gently inside it.
+</sentence>
+<sentence>
 Then, reaching into one of his coat pockets, he would remove a red notebook – similar to Quinn's but smaller – and write in it with great concentration for a minute or two.
+</sentence>
+<sentence>
 Having completed this operation, he would return the notebook to his pocket, pick up his bag, and continue on his way.
+</sentence>
+<sentence>
 As far as Quinn could tell, the objects Stillman collected were valueless.
+</sentence>
+<sentence>
 They seemed to be no more than broken things, discarded things, stray bits of junk.
+</sentence>
+<sentence>
 Over the days that passed, Quinn noted a collapsible umbrella shorn of its material, the severed head of a rubber doll, a black glove, the bottom of a shattered light bulb, several pieces of printed matter (sogged magazines, shredded newspapers), a torn photograph, anonymous machinery parts, and sundry other clumps of flotsam he could not identify.
+</sentence>
+<sentence>
 The fact that Stillman took this scavenging seriously intrigued Quinn, but he could do no more than observe, write down what he saw in the red notebook, hover stupidly on the surface of things.
+</sentence>
+<sentence>
 At the same time, it pleased him to know that Stillman also had a red notebook, as if this formed a secret link between them.
+</sentence>
+<sentence>
 Quinn suspected that Stillman's red notebook contained answers to the questions that had been accumulating in his mind, and he began to plot various stratagems for stealing it from the old man.
+</sentence>
+<sentence>
 But the time had not yet come for such a step.
+</sentence>
+<sentence>
 Other than picking up objects from the street, Stillman seemed to do nothing.
+</sentence>
+<sentence>
 Every now and then he would stop somewhere for a meal.
+</sentence>
+<sentence>
 Occasionally he would bump into someone and mumble an apology.
+</sentence>
+<sentence>
 Once a car nearly ran him over as he was crossing the street.
+</sentence>
+<sentence>
 Stillman did not talk to anyone, did not go into any stores, did not smile.
+</sentence>
+<sentence>
 He seemed neither happy nor sad.
+</sentence>
+<sentence>
 Twice, when his scavenging haul had been unusually large, he returned to the hotel in the middle of the day and remerged a few minutes later with an empty bag.
+</sentence>
+<sentence>
 On most days he spent at least several hours in Riverside Park, walking methodically along the macadam footpaths or else thrashing through the bushes with a stick.
+</sentence>
+<sentence>
 His quest for objects did not abate amidst the greenery.
+</sentence>
+<sentence>
 Stones, leaves, and twigs all found their way into his bag.
+</sentence>
+<sentence>
 Once, Quinn observed, he even stooped down for a dried dog turd, sniffed it carefully, and kept it.
+</sentence>
+<sentence>
 It was in the park, too, that Stillman rested.
+</sentence>
+<sentence>
 In the afternoon, often following his lunch, he would sit on a bench and gaze out across the Hudson.
+</sentence>
+<sentence>
 Once, on a particularly warm day, Quinn saw him sprawled out on the grass asleep.
+</sentence>
+<sentence>
 When darkness came, Stillman would eat dinner at the Apollo Coffee Shop on 97th Street and Broadway and then return to his hotel for the night.
+</sentence>
+<sentence>
 Not once did he try to contact his son.
+</sentence>
+<sentence>
 This was confirmed by Virginia Stillman, whom Quinn called each night after returning home.
+</sentence>
+<sentence>
 The essential thing was to stay involved.
+</sentence>
+<sentence>
 Little by little, Quinn began to feel cut off from his original intentions, and he wondered now if he had not embarked on a meaningless project.
+</sentence>
+<sentence>
 It was possible, of course, that Stillman was merely biding his time, lulling the world into lethargy before striking.
+</sentence>
+<sentence>
 But that would assume he was aware of being watched, and Quinn felt that was unlikely.
+</sentence>
+<sentence>
 He had done his job well so far, keeping at a discreet distance from the old man, blending into the traffic of the street, neither calling attention to himself nor taking drastic measures to keep himself hidden.
+</sentence>
+<sentence>
 On the other hand, it was possible that Stillman had known all along that he would be watched – had even known it in advance – and therefore had not taken the trouble to discover who the particular watcher was.
+</sentence>
+<sentence>
 If being followed was a certainty, what did it matter?
+</sentence>
+<sentence>
 A watcher, once discovered, could always be replaced by another.
+</sentence>
+<sentence>
 This view of the situation comforted Quinn, and he decided to believe in it, even though he had no grounds for belief.
+</sentence>
+<sentence>
 Either Stillman knew what he was doing or he didn't.
+</sentence>
+<sentence>
 and if he didn't, then Quinn was going nowhere, was wasting his time.
+</sentence>
+<sentence>
 How much better it was to believe that all his steps were actually to some purpose.
+</sentence>
+<sentence>
 If this interpretation required knowledge on Stillman's part, then Quinn would accept this knowledge as an article of faith, at least for the time being.
+</sentence>
+<sentence>
 There remained the problem of how to occupy his thoughts as he followed the old man.
+</sentence>
+<sentence>
 Quinn was used to wandering.
+</sentence>
+<sentence>
 His excursions through the city had taught him to understand the connectedness of inner and outer.
+</sentence>
+<sentence>
 Using aimless motion as a technique of reversal, on his best days he could bring the outside in and thus usurp the sovereignty of inwardness.
+</sentence>
+<sentence>
 By flooding himself with externals, by drowning himself out of himself, he had managed to exert some small degree of control over his fits of despair.
+</sentence>
+<sentence>
 Wandering, therefore, was a kind of mindlessness.
+</sentence>
+<sentence>
 But following Stillman was not wandering.
+</sentence>
+<sentence>
 Stillman could wander, he could stagger like a blindman from one spot to another, but this was a privilege denied to Quinn.
+</sentence>
+<sentence>
 For he was obliged now to concentrate on what he was doing, even if it was next to nothing.
+</sentence>
+<sentence>
 Time and again his thoughts would begin to drift, and soon thereafter his steps would follow suit.
+</sentence>
+<sentence>
 This meant that he was constantly in danger of quickening his pace and crashing into Stillman from behind.
+</sentence>
+<sentence>
 To guard against this mishap he devised several different methods of deceleration.
+</sentence>
+<sentence>
 The first was to tell himself that he was no longer Daniel Quinn.
+</sentence>
+<sentence>
 He was Paul Auster now, and with each step he took he tried to fit more comfortably into the strictures of that transformation.
+</sentence>
+<sentence>
 Auster was no more than a name to him, a husk without content.
+</sentence>
+<sentence>
 To be Auster meant being a man with no interior, a man with no thoughts.
+</sentence>
+<sentence>
 Stillman was gone now.
+</sentence>
+<sentence>
 The old man had become part of the city.
+</sentence>
+<sentence>
 He was a speck, a punctuation mark, a brick in an endless wall of bricks.
+</sentence>
+<sentence>
 Quinn could walk through the streets every day for the rest of his life, and still he would not find him.
+</sentence>
+<sentence>
 Everything had been reduced to chance, a nightmare of numbers and probabilities.
+</sentence>
+<sentence>
 There were no clues, no leads, no moves to be made.
+</sentence>
+<sentence>
 Quinn backtracked in his mind to the beginning of the case.
+</sentence>
+<sentence>
 His job had been to protect Peter, not to follow Stillman.
+</sentence>
+<sentence>
 That had simply been a method, a way of trying to predict what would happen.
+</sentence>
+<sentence>
 By watching Stillman, the theory was that he would learn what his intentions were toward Peter.
+</sentence>
+<sentence>
 He had followed the old man for two weeks.
+</sentence>
+<sentence>
 What, then, could he conclude?
+</sentence>
+<sentence>
 Not much.
+</sentence>
+<sentence>
 Stillman's behavior had been too obscure to give any hints.
+</sentence>
+<sentence>
 There were, of course, certain extreme measures that they could take.
+</sentence>
+<sentence>
 He could suggest to Virginia Stillman that she get an unlisted telephone number.
+</sentence>
+<sentence>
 That would eliminate the disturbing calls, at least temporarily.
+</sentence>
+<sentence>
 If that failed, she and Peter could move.
+</sentence>
+<sentence>
 They could leave the neighborhood, perhaps leave the city altogether.
+</sentence>
+<sentence>
 At the very worst, they could take on new identities, live under different names.
+</sentence>
+<sentence>
 This last thought reminded him of something important.
+</sentence>
+<sentence>
 Until now, he realized, he had never seriously questioned the circumstances of his hiring.
+</sentence>
+<sentence>
 Things had happened too quickly, and he had taken it for granted that he could fill in for Paul Auster.
+</sentence>
+<sentence>
 Once he had taken the leap into that name, he had stopped thinking about Auster himself.
+</sentence>
+<sentence>
 If this man was as good a detective as the Stillmans thought he was, perhaps he would be able to help with the case.
+</sentence>
+<sentence>
 Quinn would make a clean breast of it, Auster would forgive him, and together they would work to save Peter Stillman.
+</sentence>
+<sentence>
 He looked through the yellow pages for the Auster Detective Agency.
+</sentence>
+<sentence>
 There was no listing.
+</sentence>
+<sentence>
 In the white pages, however, he found the name.
+</sentence>
+<sentence>
 There was one Paul Auster in Manhattan, living on Riverside Drive – not far from Quinn's own house.
+</sentence>
+<sentence>
 There was no mention of a detective agency, but that did not necessarily mean anything.
+</sentence>
+<sentence>
 It could be that Auster had so much work he didn't need to advertise.
+</sentence>
+<sentence>
 Quinn picked up the phone and was about to dial when he thought better of it.
+</sentence>
+<sentence>
 This was too important a conversation to leave to the phone.
+</sentence>
+<sentence>
 He did not want to run the risk of being brushed off.
+</sentence>
+<sentence>
 Since Auster did not have an office, that meant he worked at home.
+</sentence>
+<sentence>
 Quinn would go there and talk to him face to face.
+</sentence>
+<sentence>
 The rain had stopped now, and although the sky was still gray, far to the west Quinn could see a tiny shift of light seeping through the clouds.
+</sentence>
+<sentence>
 As he walked up Riverside Drive, he became aware of the fact that he was no longer following Stillman.
+</sentence>
+<sentence>
 It felt as though he had lost half of himself.
+</sentence>
+<sentence>
 For two weeks he had been tied by an invisible thread to the old man.
+</sentence>
+<sentence>
 Whatever Stillman had done, he had done; wherever Stillman had gone, he had gone.
+</sentence>
+<sentence>
 His body was not accustomed to this new freedom, and for the first few blocks he walked at the old shuffling pace.
+</sentence>
+<sentence>
 The spell was over, and yet his body did not know it.
+</sentence>
+<sentence>
 Auster's building was in the middle of the long block that ran between 116th and 119th Streets, just south of Riverside Church and Grant's Tomb.
+</sentence>
+<sentence>
 It was a well-kept place, with polished doorknobs and clean glass, and it had an air of bourgeois sobriety that appealed to Quinn at that moment.
+</sentence>
+<sentence>
 Auster's apartment was on the eleventh floor, and Quinn rang the buzzer, expecting to hear a voice speak to him through the intercom.
+</sentence>
+<sentence>
 But the door buzzer answered him without any conversation.
+</sentence>
+<sentence>
 Quinn pushed the door open, walked through the lobby, and rode the elevator to the eleventh floor.
+</sentence>
+<sentence>
 It was a man who opened the apartment door.
+</sentence>
+<sentence>
 He was a tall dark fellow in his mid-thirties, with rumpled clothes and a two-day beard.
+</sentence>
+<sentence>
 In his right hand, fixed between his thumb and first two fingers, he held an uncapped fountain pen, still poised in a writing position.
+</sentence>
+<sentence>
 The man seemed surprised to find a stranger standing before him.
+</sentence>
+<sentence>
 Yes? he asked tentatively.
+</sentence>
+<sentence>
 Quinn spoke in the politest tone he could muster. Were you expecting someone else?
+</sentence>
+<sentence>
 My wife, as a matter of fact.
+</sentence>
+<sentence>
 That's why I rang the buzzer without asking who it was.
+</sentence>
+<sentence>
 I'm sorry to disturb you, Quinn apologized. But I'm looking for Paul Auster.
+</sentence>
+<sentence>
 I'm Paul Auster, said the man.
+</sentence>
+<sentence>
 I wonder if I could talk to you. It's quite important.
+</sentence>
+<sentence>
 You'll have to tell me what it's about first.
+</sentence>
+<sentence>
 I hardly know myself. Quinn gave Auster an honest look.
+</sentence>
+<sentence>
 It's complicated, I'm afraid. Very complicated.
+</sentence>
+<sentence>
 Do you have a name?
+</sentence>
+<sentence>
 I'm sorry. Of course I do. Quinn.
+</sentence>
+<sentence>
 The name seemed to suggest something to Auster, and he paused for a moment abstractedly, as if searching through his memory.
+</sentence>
+<sentence>
 Quinn, he muttered to himself.
+</sentence>
+<sentence>
 I know that name from somewhere. He went silent again, straining harder to dredge up the answer.
+</sentence>
+<sentence>
 You aren't a poet, are you?
+</sentence>
+<sentence>
 I used to be, said Quinn.
+</sentence>
+<sentence>
 But I haven't written poems for a long time now.
+</sentence>
+<sentence>
 You did a book several years ago, didn't you?
+</sentence>
+<sentence>
 I think the title was Unfinished Business.
+</sentence>
+<sentence>
 A little book with a blue cover.
+</sentence>
+<sentence>
 Yes. That was me.
+</sentence>
+<sentence>
 I liked it very much.
+</sentence>
+<sentence>
 I kept hoping to see more of your work.
+</sentence>
+<sentence>
 In fact, I even wondered what had happened to you.
+</sentence>
+<sentence>
 I'm still here. Sort of.
+</sentence>
+<sentence>
 Auster opened the door wider and gestured for Quinn to enter the apartment.
+</sentence>
+<sentence>
 It was a pleasant enough place inside; oddly shaped, with several long corridors, books cluttered everywhere, pictures on the walls by artists Quinn did not know, and a few children's toys scattered on the floor – a red truck, a brown bear, a green space monster.
+</sentence>
+<sentence>
 Auster led him to the living room, gave him a frayed upholstered chair to sit in, and then went off to the kitchen to fetch some beer.
+</sentence>
+<sentence>
 He returned with two bottles, placed them on a wooden crate that served as the coffee table, and sat down on the sofa across from Quinn.
+</sentence>
+<sentence>
 Was it some kind of literary thing you wanted to talk about? Auster began.
+</sentence>
+<sentence>
 No, said Quinn.
+</sentence>
+<sentence>
 In the end, they are actually successful.
+</sentence>
+<sentence>
 The book was just one of their ploys.
+</sentence>
+<sentence>
 The idea was to hold a mirror up to Don Quixote's madness to record each of his absurd and ludicrous delusions, so that when he finally read the book himself, he would see the error of his ways.
+</sentence>
+<sentence>
 I like that.
+</sentence>
+<sentence>
 Yes. But there's one last twist.
+</sentence>
+<sentence>
 Don Quixote, in my view, was not really mad.
+</sentence>
+<sentence>
 He only pretended to be.
+</sentence>
+<sentence>
 In fact, he orchestrated the whole thing himself.
+</sentence>
+<sentence>
 Remember: throughout the book Don Quixote is preoccupied by the question of posterity.
+</sentence>
+<sentence>
 Again and again he wonders how accurately his chronicler will record his adventures.
+</sentence>
+<sentence>
 This implies knowledge on his part; he knows beforehand that this chronicler exists.
+</sentence>
+<sentence>
 And who else is it but Sancho Panza, the faithful squire whom Don Quixote has chosen for exactly this purpose?
+</sentence>
+<sentence>
 In the same way, he chose the three others to play the roles he destined for them.
+</sentence>
+<sentence>
 It was Don Quixote who engineered the Benengali quartet.
+</sentence>
+<sentence>
 And not only did he select the authors, it was probably he who translated the Arabic manuscript back into Spanish.
+</sentence>
+<sentence>
 We shouldn't put it past him.
+</sentence>
+<sentence>
 For a man so skilled in the art of disguise, darkening his skin and donning the clothes of a Moor could not have been very difficult.
+</sentence>
+<sentence>
 I like to imagine that scene in the marketplace at Toledo.
+</sentence>
+<sentence>
 Cervantes hiring Don Quixote to decipher the story of Don Quixote himself.
+</sentence>
+<sentence>
 There's great beauty to it.
+</sentence>
+<sentence>
 But you still haven't explained why a man like Don Quixote would disrupt his tranquil life to engage in such an elaborate hoax.
+</sentence>
+<sentence>
 That's the most interesting part of all.
+</sentence>
+<sentence>
 In my opinion, Don Quixote was conducting an experiment.
+</sentence>
+<sentence>
 He wanted to test the gullibility of his fellow men.
+</sentence>
+<sentence>
 Would it be possible, he wondered, to stand up before the world and with the utmost conviction spew out lies and nonsense?
+</sentence>
+<sentence>
 To say that windmills were knights, that a barber's basin was a helmet, that puppets were real people?
+</sentence>
+<sentence>
 Would it be possible to persuade others to agree with what he said, even though they did not believe him?
+</sentence>
+<sentence>
 In other words, to what extent would people tolerate blasphemies if they gave them amusement?
+</sentence>
+<sentence>
 The answer is obvious, isn't it?
+</sentence>
+<sentence>
 To any extent.
+</sentence>
+<sentence>
 For the proof is that we still read the book.
+</sentence>
+<sentence>
 It remains highly amusing to us.
+</sentence>
+<sentence>
 And that's finally all anyone wants out of a book – to be amused.
+</sentence>
+<sentence>
 Auster leaned back on the sofa, smiled with a certain ironic pleaure, and lit a cigarette.
+</sentence>
+<sentence>
 The man was obviously enjoying himself, but the precise nature of that pleasure eluded Quinn.
+</sentence>
+<sentence>
 It seemed to be a kind of soundless laughter, a joke that stopped short of its punchline, a generalized mirth that had no object.
+</sentence>
+<sentence>
 Quinn was about to say something in response to Auster's theory, but he was not given the chance.
+</sentence>
+<sentence>
 Just as he opened his mouth to speak, he was interrupted by a clattering of keys at the front door, the sound of the door opening and then slamming shut, and a burst of voices.
+</sentence>
+<sentence>
 Auster's face perked up at the sound.
+</sentence>
+<sentence>
 He rose from his seat, excused himself to Quinn, and walked quickly towards the door.
+</sentence>
+<sentence>
 Quinn heard laughter in the hallway, first from a woman and then from a child – the high and the higher, a staccato of ringing shrapnel – and then the basso rumbling of Auster's guffaw.
+</sentence>
+<sentence>
 The child spoke: Daddy, look what I found!
+</sentence>
+<sentence>
 And then the woman explained that it had been lying on the street, and why not, it seemed perfectly okay.
+</sentence>
+<sentence>
 A moment later he heard the child running towards him down the hall. The child shot into the living room, caught sight of Quinn, and stopped dead in his tracks.
+</sentence>
+<sentence>
 He was a blond-haired boy of five or six.
+</sentence>
+<sentence>
 Good afternoon, said Quinn.
+</sentence>
+<sentence>
 The boy, rapidly withdrawing into shyness, managed no more than a faint hello.
+</sentence>
+<sentence>
 In his left hand he held a red object that Quinn could not identify.
+</sentence>
+<sentence>
 Quinn asked the boy what it was.
+</sentence>
+<sentence>
 It's a yoyo, he answered, opening his hand to show him.
+</sentence>
+<sentence>
 I found it on the street.
+</sentence>
+<sentence>
 Does it work?
+</sentence>
+<sentence>
 The boy gave an exaggerated pantomine shrug.
+</sentence>
+<sentence>
 Dunno.
+</sentence>
+<sentence>
 Siri can't do it. And I don't know how.
+</sentence>
+<sentence>
 Quinn asked him if he could try, and the boy walked over and put it in his hand.
+</sentence>
+<sentence>
 As he examined the yoyo, he could hear the child breathing beside him, watching his every move.
+</sentence>
+<sentence>
 The yoyo was plastic, similar to the ones he had played with years ago, but more elaborate somehow, an artifact of the space age.
+</sentence>
+<sentence>
 Quinn fastened the loop at the end of the string around his middle finger, stood up, and gave it a try.
+</sentence>
+<sentence>
 The yoyo gave off a fluted, whistling sound as it descended, and sparks shot off inside it.
+</sentence>
+<sentence>
 The boy gasped, but then the yoyo stopped, dangling at the end of the line.
+</sentence>
+<sentence>
 A great philosopher once said, muttered Quinn, that the way up and the way down are one and the same.
+</sentence>
+<sentence>
 But you didn't make it go up, said the boy.
+</sentence>
+<sentence>
 It only went down.
+</sentence>
+<sentence>
 You have to keep trying.
+</sentence>
+<sentence>
 Quinn was rewinding the spool for another attempt when Auster and his wife entered the room.
+</sentence>
+<sentence>
 He looked up and saw the woman first.
+</sentence>
+<sentence>
 In that one brief moment he knew that he was in trouble.
+</sentence>
+<sentence>
 She was a tall, thin blonde, radiantly beautiful, with an energy and happiness that seemed to make everything around her invisible.
+</sentence>
+<sentence>
 It was too much for Quinn.
+</sentence>
+<sentence>
 He felt as though Auster were taunting him with the things he had lost, and he responded with envy and rage, a lacerating self-pity.
+</sentence>
+<sentence>
 Yes, he too would have liked to have this wife and this child, to sit around all day spouting drivel about old books, to be surrounded by yoyos and ham omelettes and fountain pens.
+</sentence>
+<sentence>
 He prayed to himself for deliverance.
+</sentence>
+<sentence>
 Auster saw the yoyo in his hands and said, I see you've already met.
+</sentence>
+<sentence>
 Daniel, he said to the boy, this is Daniel.
+</sentence>
+<sentence>
 And then to Quinn, with that same ironic smile, Daniel, this is Daniel.
+</sentence>
+<sentence>
 The boy burst out laughing and said, Everybody's Daniel!
+</sentence>
+<sentence>
 That's right, said Quinn.
+</sentence>
+<sentence>
 I'm you, and you're me.
+</sentence>
+<sentence>
 And around and around it goes, shouted the boy, suddenly spreading his arms and spinning around the room like a gyroscope.
+</sentence>
+<sentence>
 And this, said Auster, turning to the woman, is my wife, Siri.
+</sentence>
+<sentence>
 The wife smiled her smile, said she was glad to meet Quinn as though she meant it, and then extended her hand to him.
+</sentence>
+<sentence>
 He shook it, feeling the uncanny slenderness of her bones, and asked if her name was Norwegian.
+</sentence>
+<sentence>
 Not many people know that, she said.
+</sentence>
+<sentence>
 Do you come from Norway?
+</sentence>
+<sentence>
 Indirectly, she said. By way of Northfield, Minnesota.
+</sentence>
+<sentence>
 And then she laughed her laugh, and Quinn felt a little more of himself collapse.
+</sentence>
+<sentence>
 Quinn was nowhere now.
+</sentence>
+<sentence>
 He had nothing, he knew nothing, he knew that he knew nothing.
+</sentence>
+<sentence>
 Not only had he been sent back to the beginning, he was now before the beginning, and so far before the beginning that it was worse than any end he could imagine.
+</sentence>
+<sentence>
 His watch read nearly six.
+</sentence>
+<sentence>
 Quinn walked home the way he had come, lengthening his strides with each new block.
+</sentence>
+<sentence>
 By the time he came to his street, he was running.
+</sentence>
+<sentence>
 It's June second, he told himself.
+</sentence>
+<sentence>
 Try to remember that.
+</sentence>
+<sentence>
 This is New York, and tomorrow will be June third.
+</sentence>
+<sentence>
 If all goes well, the following day will be the fourth.
+</sentence>
+<sentence>
 But nothing is certain.
+</sentence>
+<sentence>
 The hour had long since passed for his call to Virginia Stillman, and he debated whether to go through with it.
+</sentence>
+<sentence>
 Would it be possible to ignore her?
+</sentence>
+<sentence>
 Could he abandon everything now, just like that?
+</sentence>
+<sentence>
 Yes, he said to himself, it was possible.
+</sentence>
+<sentence>
 He could forget about the case, get back to his routine, write another book.
+</sentence>
+<sentence>
 He could take a trip if he liked, even leave the country for a while.
+</sentence>
+<sentence>
 He could go to Paris, for example.
+</sentence>
+<sentence>
 Yes, that was possible.
+</sentence>
+<sentence>
 But anywhere would do, he thought, anywhere at all.
+</sentence>
+<sentence>
 He sat down in his living room and looked at the walls.
+</sentence>
+<sentence>
 They had once been white, he remembered, but now they had turned a curious shade of yellow.
+</sentence>
+<sentence>
 Perhaps one day they would drift further into dinginess, lasping into gray, or even brown, like some pieces of aging fruit.
+</sentence>
+<sentence>
 A white wall becomes a yellow wall becomes a gray wall, he said to himself.
+</sentence>
+<sentence>
 The paint becomes exhausted, the city encroaches with its soot, the plaster crumbles within.
+</sentence>
+<sentence>
 Changes, then more changes still.
+</sentence>
+<sentence>
 He smoked a cigarette, and then another, and then another.
+</sentence>
+<sentence>
 He looked at his hands, saw that they were dirty, and got up to wash them.
+</sentence>
+<sentence>
 In the bathroom, with the water running in the sink, he decided to shave as well.
+</sentence>
+<sentence>
 He lathered his face, took out a clean blade, and started scraping off his beard.
+</sentence>
+<sentence>
 For some reason, he found it unpleasant to look in the mirror and kept trying to avoid himself with his eyes.
+</sentence>
+<sentence>
 You're getting old, he said to himself, you're turning into an old fart.
+</sentence>
+<sentence>
 Then he went into the kitchen, ate a bowl of cornflakes, and smoked another cigarette.
+</sentence>
+<sentence>
 It was seven o'clock now.
+</sentence>
+<sentence>
 Once again, he debated whether to call Virginia Stillman.
+</sentence>
+<sentence>
 As he turned the question over in his mind, it occurred to him that he no longer had an opinion.
+</sentence>
+<sentence>
 He saw the argument for making the call, and at the same time he saw the argument for not making it.
+</sentence>
+<sentence>
 In the end, it was etiquette that decided.
+</sentence>
+<sentence>
 It would not be fair to disappear without telling her first.
+</sentence>
+<sentence>
 After that, it would be perfectly acceptable.
+</sentence>
+<sentence>
 As long as you tell people what you are going to do, he reasoned, it doesn't matter.
+</sentence>
+<sentence>
 Then you are free to do what you want.
+</sentence>
+<sentence>
 The number, however, was busy.
+</sentence>
+<sentence>
 He waited five minutes and dialed again.
+</sentence>
+<sentence>
 Again, the number was busy.
+</sentence>
+<sentence>
 For the next hour Quinn alternated between dialing and waiting, always with the same result.
+</sentence>
+<sentence>
 At last he called the operator and asked whether the phone was out of order.
+</sentence>
+<sentence>
 There would be a charge of thirty cents, he was told.
+</sentence>
+<sentence>
 Then came a crackling in the wires, the sound of further dialing, more voices.
+</sentence>
+<sentence>
 Quinn tried to imagine what the operators looked like.
+</sentence>
+<sentence>
 Then the first woman spoke again: the number was busy.
+</sentence>
+<sentence>
 Quinn did not know what to think.
+</sentence>
+<sentence>
 There were so many possibilities, he could not even begin.
+</sentence>
+<sentence>
 Stillman? The phone off the hook? Someone else altogether?
+</sentence>
+<sentence>
 He turned on the television and watched the first two innings of the Mets game.
+</sentence>
+<sentence>
 Then he dialed once again.
+</sentence>
+<sentence>
 Same thing.
+</sentence>
+<sentence>
 In the top of the third St. Louis scored on a walk, a stolen base, an infield out, and a sacrifice fly.
+</sentence>
+<sentence>
 The Mets matched that run in their half of the inning on a double by Wilson and a single by Youngblood.
+</sentence>
+<sentence>
 Quinn realized that he didn't care.
+</sentence>
+<sentence>
 A beer commercial came on, and he turned off the sound.
+</sentence>
+<sentence>
 For the twentieth time the same thing happened.
+</sentence>
+<sentence>
 In the top of the fourth St. Louis scored five runs, and Quinn turned off the picture as well.
+</sentence>
+<sentence>
 He found his red notebook, sat down at his desk, and wrote steadily for the next two hours.
+</sentence>
+<sentence>
 He did not bother to read over what he had written.
+</sentence>
+<sentence>
 Then he called Virginia Stillman and got another busy signal.
+</sentence>
+<sentence>
 He slammed the receiver down so hard that the plastic cracked.
+</sentence>
+<sentence>
 When he tried to call again, he could no longer get a dial tone.
+</sentence>
+<sentence>
 He stood up, went into the kitchen, and made another bowl of cornflakes.
+</sentence>
+<sentence>
 Then he went to bed.
+</sentence>
+<sentence>
 In his dream, which he later forgot, he found himself walking down Broadway, holding Auster's son by the hand.
+</sentence>
+<sentence>
 Security measures are strict on flights to Israel, the bags are searched, the men are frisked, and the women have an electronic hoop passed over them, fore-and-aft.
+</sentence>
+<sentence>
 Then hand luggage is opened.
+</sentence>
+<sentence>
 No one is very patient.
+</sentence>
+<sentence>
 Visibility in the queue is poor because of the many Hasidim with their broad hats and beards and sidelocks and dangling fringes who have descended on Heathrow and are far too restless to wait in line but rush in and out, gesticulating, exclaiming.
+</sentence>
+<sentence>
 The corridors are jumping with them.
+</sentence>
+<sentence>
 Some two hundred Hasidim are flying to Israel to attend the circumcision of the firstborn son of their spiritual leader, the Belzer Rabbi.
+</sentence>
+<sentence>
 Entering the 747, my wife, Alexandra, and I are enfiladed by eyes that lie dark in hairy ambush.
+</sentence>
+<sentence>
 To me there is nothing foreign in these hats, side-locks, and fringes.
+</sentence>
+<sentence>
 It is my childhood revisited.
+</sentence>
+<sentence>
 At the age of six, I myself wore a tallith katan, or scapular, under my shirt, only mine was a scrap of green calico print, whereas theirs are white linen.
+</sentence>
+<sentence>
 God instructed Moses to speak to the children of Israel and to "bid them that they make them fringes in the borders of their garments."
+</sentence>
+<sentence>
 So they are still wearing them some four thousand years later.
+</sentence>
+<sentence>
 We find our seats, two in a row of three, toward the rear of the aircraft.
+</sentence>
+<sentence>
 "Do you speak Yiddish?" he says.
+</sentence>
+<sentence>
 "Yes, certainly."
+</sentence>
+<sentence>
 "I can not be next to your wife.
+</sentence>
+<sentence>
 Please sit between us.
+</sentence>
+<sentence>
 Be so good," he says.
+</sentence>
+<sentence>
 "Of course."
+</sentence>
+<sentence>
 I take the middle seat, which I dislike, but I am not really put out.
+</sentence>
+<sentence>
 Curious, rather.
+</sentence>
+<sentence>
 Our Hasid is in his late twenties.
+</sentence>
+<sentence>
 He is pimply, his neck is thin, his blue eyes goggle, his underlip extrudes.
+</sentence>
+<sentence>
 He does not keep a civilized face.
+</sentence>
+<sentence>
 Thoughts and impulses other than civilized fill it by no means inferior impulses and thoughts.
+</sentence>
+<sentence>
 And though he is not permitted to sit beside women unrelated to him or to look at them or to communicate with them in any manner (all of which probably saves him a great deal of trouble), he seems a good-hearted young man and he is visibly enjoying himself.
+</sentence>
+<sentence>
 All the Hasidim are vividly enjoying themselves, dodging through the aisles, visiting chattering standing impatiently in the long lavatory lines, amiable, busy as geese.
+</sentence>
+<sentence>
 They pay no attention to signs.
+</sentence>
+<sentence>
 Don't they understand English?
+</sentence>
+<sentence>
 The stewardesses are furious with them.
+</sentence>
+<sentence>
 I ask one of the hostesses when I may expect to receive a drink and she cries out in irritation, "Back to your seat! "
+</sentence>
+<sentence>
 She says this in so ringing a voice that I retreat.
+</sentence>
+<sentence>
 Not so the merry-minded Hasidim, exulting everywhere.
+</sentence>
+<sentence>
 The orders given by these young gentile uniformed females are nothing to them.
+</sentence>
+<sentence>
 To them they are merely attendants, exotic bediener, all but bodyless.
+</sentence>
+<sentence>
 Anticipating a difficulty, I ask the stewardess to serve me a kosher lunch.
+</sentence>
+<sentence>
 "I can't do that, we haven't enough for them," she says.
+</sentence>
+<sentence>
 "We weren't prepared."
+</sentence>
+<sentence>
 Her big British eyes are affronted and her bosom has risen with indignation.
+</sentence>
+<sentence>
 "We've got to go out of our way to Rome for more of their special meals."
+</sentence>
+<sentence>
 Amused, my wife asks why I ordered the kosher lunch.
+</sentence>
+<sentence>
 "Because when they bring my chicken dinner this kid with the beard will be in a state," I explain.
+</sentence>
+<sentence>
 And so he is.
+</sentence>
+<sentence>
 The British Airways chicken with the chill of death upon it lies before me.
+</sentence>
+<sentence>
 But after three hours of security exercises at Heathrow I am hungry.
+</sentence>
+<sentence>
 The young Hasid recoils when the tray is handed to me.
+</sentence>
+<sentence>
 He addresses me again in Yiddish.
+</sentence>
+<sentence>
 He says, "I must talk to you.
+</sentence>
+<sentence>
 You won't be offended?"
+</sentence>
+<sentence>
 "No, I don't think so."
+</sentence>
+<sentence>
 "You may want to give me a slap in the face."
+</sentence>
+<sentence>
 "Why should I?"
+</sentence>
+<sentence>
 "You are a Jew.
+</sentence>
+<sentence>
 You must be a Jew, we are speaking Yiddish.
+</sentence>
+<sentence>
 How can you eat that! "
+</sentence>
+<sentence>
 "It looks awful, doesn't it?"
+</sentence>
+<sentence>
 "You mustn't touch it.
+</sentence>
+<sentence>
 My womenfolk packed kosher-beef sandwiches for me.
+</sentence>
+<sentence>
 Is your wife Jewish?"
+</sentence>
+<sentence>
 Here I'm obliged to lie.
+</sentence>
+<sentence>
 Alexandra is Rumanian.
+</sentence>
+<sentence>
 But I can't give him too many shocks at once, and I say, "She has not had a Jewish upbringing."
+</sentence>
+<sentence>
 "She doesn't speak Yiddish?"
+</sentence>
+<sentence>
 "Not a word.
+</sentence>
+<sentence>
 But excuse me, I want my lunch."
+</sentence>
+<sentence>
 "Will you eat some of my kosher food instead, as a favor?"
+</sentence>
+<sentence>
 "With pleasure."
+</sentence>
+<sentence>
 "Then I will give you a sandwich, but only on one condition.
+</sentence>
+<sentence>
 You must never never eat trephena food again."
+</sentence>
+<sentence>
 "I can't promise you that.
+</sentence>
+<sentence>
 You're asking too much.
+</sentence>
+<sentence>
 And just for one sandwich."
+</sentence>
+<sentence>
 "I have a duty toward you," he tells me.
+</sentence>
+<sentence>
 "Will you listen to a proposition?"
+</sentence>
+<sentence>
 "Of course I will."
+</sentence>
+<sentence>
 "So let us make a deal.
+</sentence>
+<sentence>
 I am prepared to pay you.
+</sentence>
+<sentence>
 If you will eat nothing but kosher food, for the rest of your life I will send you fifteen dollars a week."
+</sentence>
+<sentence>
 "That's very generous," I say.
+</sentence>
+<sentence>
 "Well, you are a Jew," he says.
+</sentence>
+<sentence>
 "I must try to save you."
+</sentence>
+<sentence>
 "How do you earn your living?"
+</sentence>
+<sentence>
 "In a Hasidic sweater factory in New Jersey.
+</sentence>
+<sentence>
 We are all Hasidim there.
+</sentence>
+<sentence>
 The boss is a Hasid.
+</sentence>
+<sentence>
 I came from Israel five years ago to be married in New Jersey.
+</sentence>
+<sentence>
 My rabbi is in Jerusalem."
+</sentence>
+<sentence>
 "How is it that you don't know English?"
+</sentence>
+<sentence>
 "What do I need English for?
+</sentence>
+<sentence>
 So, I am asking, will you take my fifteen dollars?"
+</sentence>
+<sentence>
 "Kosher food is far more expensive than other kinds," I say.
+</sentence>
+<sentence>
 "Fifteen dollars isn't nearly enough."
+</sentence>
+<sentence>
 "I can go as far as twenty-five."
+</sentence>
+<sentence>
 "I can't accept such a sacrifice from you."
+</sentence>
+<sentence>
 Shrugging, he gives up and I turn to the twice disagreeable chicken and eat guiltily, my appetite spoiled.
+</sentence>
+<sentence>
 The young Hasid opens his prayer book.
+</sentence>
+<sentence>
 "He's so fervent," says my wife.
+</sentence>
+<sentence>
 "I wonder if he's praying for you."
+</sentence>
+<sentence>
 She smiles at my discomfiture.
+</sentence>
+<sentence>
 As soon as the trays are removed, the Hasidim block the aisles with their Minchah service, rocking themselves and stretching their necks upward.
+</sentence>
+<sentence>
 This is what has held the Jews together for thousands of years.
+</sentence>
+<sentence>
 "I like them," says my wife.
+</sentence>
+<sentence>
 "They're so lively, so childlike."
+</sentence>
+<sentence>
 "You might find them a little hard to live with," I tell her.
+</sentence>
+<sentence>
 "You'd have to do everything their way, no options given."
+</sentence>
+<sentence>
 "But they're cheerful, and they're warm and natural.
+</sentence>
+<sentence>
 I love their costumes.
+</sentence>
+<sentence>
 Couldn't you get one of those beautiful hats?"
+</sentence>
+<sentence>
 "I don't know whether they sell them to outsiders."
+</sentence>
+<sentence>
 When the Hasid returns to his seat after prayers, I tell him that my wife, a woman of learning, will be lecturing at the Hebrew University in Jerusalem.
+</sentence>
+<sentence>
 "What is she?"
+</sentence>
+<sentence>
 "A mathematician. "
+</sentence>
+<sentence>
 He is puzzled.
+</sentence>
+<sentence>
 "What is that?" he asks.
+</sentence>
+<sentence>
 I try to explain.
+</sentence>
+<sentence>
 He says, "This I never heard of.
+</sentence>
+<sentence>
 What actually is it they do?"
+</sentence>
+<sentence>
 I am astonished.
+</sentence>
+<sentence>
 I knew that he was an innocent but I would never have believed him to be ignorant of such a thing.
+</sentence>
+<sentence>
 "So you don't know what mathematicians are.
+</sentence>
+<sentence>
 Le Monde gloated over this reversal.
+</sentence>
+<sentence>
 On July 12, after the raid, Israel was accused of giving comfort to the reactionaries of Rhodesia and South Africa by its demonstration of military superiority and its use of Western arms and techniques, upsetting the balance between poor and rich countries, disturbing the work of men of good will in Paris who were trying to create a new climate and to treat the countries of the Third World as equals and partners.
+</sentence>
+<sentence>
 Rhodesians and South Africans, said Le Monde, were toasting the Israelis in champagne.
+</sentence>
+<sentence>
 But European approval of the raid would endanger the plans of France for a new international order.
+</sentence>
+<sentence>
 On July 4-5, again before the rescue, Le Monde had reported without comment wisecracks made by Amin in a speech at Port Louis.
+</sentence>
+<sentence>
 Addressing the OAS, Amin had provoked laughter and applause among the delegates by saying that the hostages were as comfortable as they could be in the circumstances surrounded by explosives.
+</sentence>
+<sentence>
 "When I left," he said, laughing, "the hostages wept and begged me to stay. "
+</sentence>
+<sentence>
 This broke everybody up.
+</sentence>
+<sentence>
 We step into the street and my friend David Shahar, whose chest is large, takes a deep breath and advises me to do the same.
+</sentence>
+<sentence>
 The air, the very air, is thought-nourishing in Jerusalem, the Sages themselves said so.
+</sentence>
+<sentence>
 I am prepared to believe it.
+</sentence>
+<sentence>
 I know that it must have special properties.
+</sentence>
+<sentence>
 The delicacy of the light also affects me.
+</sentence>
+<sentence>
 I look downward toward the Dead Sea, over broken rocks and small houses with bulbous roofs.
+</sentence>
+<sentence>
 The color of these is that of the ground itself, and on this strange deadness the melting air presses with an almost human weight.
+</sentence>
+<sentence>
 Something intelligible, something metaphysical is communicated by these colors.
+</sentence>
+<sentence>
 The universe interprets itself before your eyes in the openness of the rockjumbled valley ending in dead water.
+</sentence>
+<sentence>
 Elsewhere you die and disintegrate.
+</sentence>
+<sentence>
 Here you die and mingle.
+</sentence>
+<sentence>
 Shahar leads me down from the Mishkenot Sha'ananim, which stands on a slope and faces Mount Zion and the Old City, to the Gai-Hinnom (Gehenna of tradition), where worshipers of Moloch once sacrificed their children.
+</sentence>
+<sentence>
 He leads me from the Gai-Hinnom up to an ancient Karaite burial ground, where you can see the mingling for yourself.
+</sentence>
+<sentence>
 It acts queerly on my nerves (through the feet, as it were), because I feel that a good part of this dust must be ground out of human bone.
+</sentence>
+<sentence>
 I don't know that Jerusalem is geologically older than other places but the dolomite and clay look hoarier than anything I ever saw.
+</sentence>
+<sentence>
 Gray and sunken, in the thoughts of Mr Bloom in Joyce's Ulysses.
+</sentence>
+<sentence>
 But there is nothing in the brilliant air and the massive white clouds hanging over the crumpled mountains that suggests exhaustion.
+</sentence>
+<sentence>
 This atmosphere makes the American commonplace "out of this world" true enough to give your soul a start.
+</sentence>
+<sentence>
 The municipality has turned the Gai-Hinnom into a park.
+</sentence>
+<sentence>
 The Wolfson Foundation of London has paid for the planting of gardens, and Arab kids are kicking a soccer ball in the green bottom of the valley.
+</sentence>
+<sentence>
 East Jerusalem toughies of fourteen are smoking cigarettes and stiffening their shoulders, practicing the dangerous-loiterer bit as we pass.
+</sentence>
+<sentence>
 Shahar is bald, muscular, and his shirt is ornamented with nags, horseshoes, and bridles, a yellow print on dark blue.
+</sentence>
+<sentence>
 Amusing, since he's a writer and a thoughtful man, anything but a tout.
+</sentence>
+<sentence>
 So we look into ancient tombed caverns and the niches into which corpses once were laid.
+</sentence>
+<sentence>
 Now truck fenders are rusting there, the twentieth century adding its crumbling metal to the great Jerusalem dust mixture.
+</sentence>
+<sentence>
 You can be absolutely sure, says Shahar, that the Prophet Jeremiah passed this way.
+</sentence>
+<sentence>
 Right where we are standing.
+</sentence>
+<sentence>
 I find in Elie Kedourie's Arabic Political Memoirs facts unknown to most about American diplomacy in the late forties.
+</sentence>
+<sentence>
 Certainly I didn't know them.
+</sentence>
+<sentence>
 In the Middle East and probably elsewhere, the United States relied heavily on management consultants and public-relations experts.
+</sentence>
+<sentence>
 The American firm of Booz, Allen &amp; Hamilton lent one of its specialists, Miles Copeland by name, to the State Department, where he was in 1955 a member of a group called the Middle East Policy Planning Committee, the main purpose of which was, in his own words, "to work out ways of taking advantage of the friendship which was developing between ourselves and Nasser."
+</sentence>
+<sentence>
 In 1947 Copeland had been sent to Damascus ("by whom is not stated," Kedourie says) "to make unofficial contact" with Syrian leaders and "to probe for means of persuading them, on their own, to liberalize their political system."
+</sentence>
+<sentence>
 Spreading democracy over the world, the Americans first fought rigged elections in Syria, but the old corruption continued despite all their power and money could do.
+</sentence>
+<sentence>
 Frustrated, the Americans decided for the best of reasons, as always, to make a heavier move:
+</sentence>
+<sentence>
 "The American Minister at Damascus decided to encourage a military coup-d'etat, so that Syria might enjoy democracy," Kedourie writes.
+</sentence>
+<sentence>
 This was not considered particularly bizarre; other American ambassadors and ministers in the Arab world were entirely in favor of "genuine" revolution to overthrow old landowners, rich crooks, and politicians.
+</sentence>
+<sentence>
 "What was wanted was an elite to underpin the rulers, themselves in turn supported and buttressed by a population which presumably understood, approved, and legitimated the aims of such an elite.
+</sentence>
+<sentence>
 Whoever knows the Middle East will agree that such a quest was the political equivalent of the search for the philosophical stone."
+</sentence>
+<sentence>
 Failing in Syria, the Americans went to work in Egypt.
+</sentence>
+<sentence>
 Kermit Roosevelt of the CIA "met a number of officers who were involved in the conspiracy which led to the coup-d'etat of 22 July, 1952."
+</sentence>
+<sentence>
 The Americans wanted the new regime to make the populace literate, to create "a large and stable middle class a sufficient identification of local ideals and values, so that truly indigenous democratic institutions could grow up."
+</sentence>
+<sentence>
 Gliding into a new political realm, the Americans arranged for loans to the Egyptian government.
+</sentence>
+<sentence>
 They believed that genuine democracy was now on its way.
+</sentence>
+</text>
